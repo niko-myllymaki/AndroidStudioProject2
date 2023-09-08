@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <!-- First name -->
+    <TextView
+        android:id="@+id/tw_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/firstname" />
+
+    <EditText
+        android:id="@+id/editText_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/tw_firstname"
+        android:layout_alignBaseline="@+id/tw_firstname"
+        android:layout_marginLeft="40dp"
+        android:width="200px"
+        android:inputType="text"/>
+
+    <!-- Surname -->
+    <TextView
+        android:id="@+id/tw_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="90dp"
+        android:text="@string/surname" />
+
+    <EditText
+        android:id="@+id/editText_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/tw_surname"
+        android:layout_alignTop="@id/editText_firstname"
+        android:layout_alignLeft="@id/editText_firstname"
+        android:layout_marginTop="40dp"
+        android:width="200px"
+        android:inputType="text"/>
+
+    <!-- Phone number -->
+    <TextView
+        android:id="@+id/tw_phonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="140dp"
+        android:text="@string/phonenumber"
+        />
+
+    <EditText
+        android:id="@+id/editText_phonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/tw_surname"
+        android:layout_alignTop="@id/editText_firstname"
+        android:layout_alignLeft="@id/editText_firstname"
+        android:layout_marginTop="90dp"
+        android:width="200px"
+        android:inputType="phone"/>
+    <!-- Comment -->
+    <TextView
+        android:id="@+id/tw_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="180dp"
+        android:text="@string/comment" />
+
+    <EditText
+        android:id="@+id/editText_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/tw_phonenumber"
+        android:layout_alignTop="@id/editText_firstname"
+        android:layout_alignLeft="@id/editText_firstname"
+        android:layout_marginTop="130dp"
+        android:width="200px"
+        android:inputType="text"/>
+
+    <!-- Send Button -->
+    <Button
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/editText_comment"
+        android:layout_marginBottom="-60dp"
+        android:layout_alignLeft="@id/editText_comment"
+        android:onClick="handleText"
+        android:text="@string/sendbutton" />
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/editText_comment"
+        android:layout_marginBottom="-60dp"
+        android:layout_marginLeft="120dp"
+        android:layout_alignLeft="@id/send_button"
+        android:onClick="resetTextFields"
+        android:text="@string/resetbutton" />
+
+</RelativeLayout>
+
