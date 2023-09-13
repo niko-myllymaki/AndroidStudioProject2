@@ -6,15 +6,17 @@
     <!-- Here we define a dialog window theme -->
     <style name="AppThemeDialog" parent="Theme.AppCompat.Dialog">
         <!--
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/grey</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         -->
     </style>
+
     <!--Here we define a theme with no action bar and no windo title-->
     <style name="AppThemeDialog.NoTitle">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:background">@color/grey</item>
     </style>
 
 </resources>
