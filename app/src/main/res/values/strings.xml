@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Assignment_2</string>
     <string name="text">Greetings!</string>
-    <string name="firstname">First_Name</string>
+    <string name="firstname">First Name</string>
     <string name="surname">Surname</string>
     <string name="phonenumber">Phone Number</string>
     <string name="comment">Comment</string>

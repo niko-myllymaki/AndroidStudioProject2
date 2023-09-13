@@ -15,56 +15,55 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //startEvent();
-        getStartTime();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(tag, tag + "onCreate()");
+        startEvent();
     }
 
     protected void onStart() {
-        //endEvent();
-        getStartTime();
+        endEvent();
         super.onStart();
+        getElapsedTime();
         Log.d(tag, tag + "onStart()");
-        //getElapsedTime();
+        startEvent();
     }
 
     protected void onRestart() {
-        getStartTime();
+        endEvent();
         super.onRestart();
+        getElapsedTime();
         Log.d(tag, tag + "onReStart()");
+        startEvent();
     }
     protected void onResume() {
-        //startEvent();
-        getStartTime();
+        endEvent();
         super.onResume();
+        getElapsedTime();
         Log.d(tag, tag + "onResume()");
+        startEvent();
     }
     protected void onPause() {
-        //endEvent();
-        getStartTime();
+        endEvent();
         super.onPause();
+        getElapsedTime();
         Log.d(tag, tag + "onPause()");
-        //getElapsedTime();
+        startEvent();
     }
     protected void onStop() {
-        getStartTime();
+        endEvent();
         super.onStop();
+        getElapsedTime();
         Log.d(tag, tag + "onStop()");
+        startEvent();
     }
     protected void onDestroy() {
-        getStartTime();
+        endEvent();
         super.onDestroy();
+        getElapsedTime();
         Log.d(tag, tag + "onDestroy()");
     }
 
-    public void getStartTime() {
-        startTime = System.currentTimeMillis();
-        Log.d("Start Time", startTime + " ms");
-    }
-
-    /*
     public void startEvent() {
         startTime = System.currentTimeMillis();
     }
@@ -76,21 +75,14 @@ public class MainActivity extends AppCompatActivity {
     public void getElapsedTime() {
         long elapsedTime = endTime - startTime;
         String elapsedTimeString = String.valueOf(elapsedTime);
-        Log.d("Time", elapsedTimeString + " ms");
+        Log.d("Time", elapsedTimeString + " ms since last event");
     }
 
-
-     */
     public void handleText(View v) {
         EditText firstNameText = findViewById(R.id.editText_firstname);
         EditText surnameText = findViewById(R.id.editText_surname);
         EditText phoneNumberText = findViewById(R.id.editText_phonenumber);
         EditText commentText = findViewById(R.id.editText_comment);
-
-        TextView firstName = findViewById(R.id.tw_firstname);
-        TextView surname = findViewById(R.id.tw_firstname);
-        TextView phoneNumber = findViewById(R.id.tw_firstname);
-        TextView comment = findViewById(R.id.tw_firstname);
 
         //To string
         String firstNameTextString = firstNameText.getText().toString();
@@ -98,18 +90,10 @@ public class MainActivity extends AppCompatActivity {
         String phoneNumberTextString = phoneNumberText.getText().toString();
         String commentTextString = commentText.getText().toString();
 
-        String firstNameString = firstName.getText().toString();
-        String surnameString = surname.getText().toString();
-        String phoneNumberString = phoneNumber.getText().toString();
-        String commentString = comment.getText().toString();
+        String inputsToLog = "Name: " + firstNameTextString + " " +  surnameTextString + ", Phone: " + phoneNumberTextString + ", Comment: " + commentTextString ;
 
+        Log.d("send", inputsToLog);
 
-        String[] tagInfo = {firstNameString, surnameString, phoneNumberString, commentString};
-        String[] inputs = {firstNameTextString, surnameTextString, phoneNumberTextString, commentTextString};
-
-        for (int i = 0; i < inputs.length; i++) {
-            Log.d(tagInfo[i], inputs[i]);
-        }
 
     }
 
